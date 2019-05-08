@@ -1,0 +1,7 @@
+{
+  "name": "ebor",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

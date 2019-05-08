@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Ebor
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="contact" size="large" (click)="gotoProfile()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div
+    style="background-color: blue; text-align: center; border-radius: 8px; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+    <h1 style="color: white">Form Peminjaman Ruangan</h1>
+  </div>
+  <form>
+    <ion-label>Nama</ion-label>
+    <ion-input [(ngModel)]="nama" [ngModelOptions]="{standalone: true}"
+      style="border-bottom: 1px solid rgba(0,0,0,0.25)"></ion-input>
+    <ion-label>NIM</ion-label>
+    <ion-input type="tel" [(ngModel)]="nim" [ngModelOptions]="{standalone: true}"
+      style="border-bottom: 1px solid rgba(0,0,0,0.25)"></ion-input>
+    <ion-label>Kelas</ion-label>
+    <ion-input [(ngModel)]="kelas" [ngModelOptions]="{standalone: true}"
+      style="border-bottom: 1px solid rgba(0,0,0,0.25)"></ion-input>
+    <ion-label>No. HP</ion-label>
+    <ion-input type="tel" [(ngModel)]="nohp" [ngModelOptions]="{standalone: true}"
+      style="border-bottom: 1px solid rgba(0,0,0,0.25)"></ion-input>
+    <ion-label>Ruangan</ion-label>
+    <ion-input [(ngModel)]="rg" [ngModelOptions]="{standalone: true}" style="border-bottom: 1px solid rgba(0,0,0,0.25)">
+    </ion-input>
+    <ion-label>Tanggal Peminjaman</ion-label>
+    <ion-datetime [(ngModel)]="tanggal_peminjaman" [ngModelOptions]="{standalone: true}"
+      style="border-bottom: 1px solid rgba(0,0,0,0.25)"></ion-datetime>
+    <ion-label>Tanggal Pengembalian</ion-label>
+    <ion-datetime [(ngModel)]="tanggal_pengembalian" [ngModelOptions]="{standalone: true}"
+      style="border-bottom: 1px solid rgba(0,0,0,0.25)"></ion-datetime>
+    <ion-button expand="block" (click)="onCreate()">login</ion-button>
+  </form>
+</ion-content>

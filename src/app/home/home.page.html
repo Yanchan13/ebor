@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Ebor
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="contact" size="large" (click)="gotoProfile()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="padding: 16px">
+    <div style="background-color: blue; border-radius: 8px; display: flex; flex-direction: row; padding: 16px; margin: 16px 0; cursor: pointer" (click)="gotoBarang()">
+      <img src="assets/PEMINJAMAN_BARANG.png" alt="" style="width: 150px; margin-right: 16px;">
+      <h3 style="color: white; align-self: center;">PEMINJAMAN BARANG</h3>
+    </div>
+    <div style="background-color: blue; border-radius: 8px; display: flex; flex-direction: row; padding: 16px; margin: 16px 0; cursor: pointer" (click)="gotoRuangan()">
+      <img src="assets/PEMINJAMAN_RUANGAN.png" alt="" style="width: 150px; margin-right: 16px;">
+      <h3 style="color: white; align-self: center;">PEMINJAMAN RUANGAN</h3>
+    </div>
+    <div style="background-color: blue; border-radius: 8px; display: flex; flex-direction: row; padding: 16px; margin: 16px 0; cursor: pointer" (click)="gotoListPeminjaman()">
+      <img src="assets/DAFTAR_PEMINJAMAN.png" alt="" style="width: 150px; margin-right: 16px;">
+      <h3 style="color: white; align-self: center;">DAFTAR PEMINJAMAN</h3>
+    </div>
+  </div>
+</ion-content>

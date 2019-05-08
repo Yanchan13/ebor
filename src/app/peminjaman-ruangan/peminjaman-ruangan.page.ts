@@ -1,0 +1,51 @@
+import { Location } from '@angular/common';
+import { Storage } from '@ionic/storage';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { EborService } from '../ebor.service';
+import { ToastController } from '@ionic/angular';
+
+@Component({
+  selector: 'app-peminjaman-ruangan',
+  templateUrl: './peminjaman-ruangan.page.html',
+  styleUrls: ['./peminjaman-ruangan.page.scss'],
+})
+export class PeminjamanRuanganPage implements OnInit {
+  nama: any;
+  nim: any;
+  kelas: any;
+  nohp: any;
+  rg: any;
+  tanggal_peminjaman: any;
+  jam_peminjaman = '00.00';
+  tanggal_pengembalian: any;
+  jam_pengembalian = '00.00';
+  constructor(private router: Router, private service: EborService, private storage: Storage, private location: Location, private toast: ToastController) { }
+
+  ngOnInit() {
+  }
+
+  gotoProfile() {
+    this.router.navigate(['profile']);
+  }
+
+  async onCreate() {
+    const data = await this.storage.get('userData');
+    const userid = JSON.parse(data._body)[0].id;
+    // tslint:disable-next-line: max-line-length
+    this.service.createRuangan(this.nama, this.nim, this.kelas, this.nohp, this.rg, this.tanggal_peminjaman, this.jam_peminjaman, this.tanggal_pengembalian, this.jam_pengembalian, userid).subscribe(response => {
+      if (response) {
+        this.presentToast()
+        this.location.back();
+      }
+    });
+  }
+
+  async presentToast() {
+    const toast = await this.toast.create({
+      message: 'Permintaan ada sedang diajukan',
+      duration: 3000
+    });
+    toast.present();
+  }
+}
