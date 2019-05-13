@@ -24,7 +24,11 @@ const routes: Routes = [
   { path: 'notification', loadChildren: './notification/notification.module#NotificationPageModule' },
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
   { path: 'auth', loadChildren: './auth/auth.module#AuthPageModule' },
-  { path: 'detail', loadChildren: './detail/detail.module#DetailPageModule' }
+  { path: 'detail', loadChildren: './detail/detail.module#DetailPageModule' },
+  { path: 'admin', loadChildren: './admin/admin.module#AdminPageModule' },
+  { path: 'update-borang', loadChildren: './update-borang/update-borang.module#UpdateBorangPageModule' },
+  { path: 'update-ruangan/:id', loadChildren: './update-ruangan/update-ruangan.module#UpdateRuanganPageModule' },
+  { path: 'update-barang/:id', loadChildren: './update-barang/update-barang.module#UpdateBarangPageModule' }
 ];
 
 @NgModule({

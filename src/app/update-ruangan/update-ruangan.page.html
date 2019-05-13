@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ ruangan.ruangan }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-back" size="large" (click)="back()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h5>Nama :</h5>
+  <p>{{ ruangan.nama }}</p>
+  <h5>NIM :</h5>
+  <p>{{ ruangan.nim }}</p>
+  <h5>Kelas :</h5>
+  <p>{{ ruangan.kelas }}</p>
+  <h5>No HP :</h5>
+  <p>{{ ruangan.nohp }}</p>
+  <h5>Ruangan :</h5>
+  <p>{{ ruangan.ruangan }}</p>
+  <h5>Tanggal Peminjaman :</h5>
+  <p>{{ ruangan.tanggal_peminjaman | date }}</p>
+  <h5>Jam Peminjaman :</h5>
+  <p>{{ ruangan.jam_peminjaman }}</p>
+  <h5>Tanggal Pengembalian :</h5>
+  <p>{{ ruangan.tanggal_pengembalian | date }}</p>
+  <h5>Jam Pengembalian :</h5>
+  <p>{{ ruangan.jam_pengembalian }}</p>
+  <form>
+    <ion-label>Status</ion-label>
+    <ion-select [(ngModel)]="ruangan.status" [ngModelOptions]="{standalone: true}" placeholder="{{ ruangan.status }}">
+      <ion-select-option value="Disetujui">Disetujui</ion-select-option>
+      <ion-select-option value="Tidak Disetujui">Tidak Disetujui</ion-select-option>
+    </ion-select>
+    <ion-label>Keterangan</ion-label>
+    <ion-input type="tel" [(ngModel)]="ruangan.keterangan" [ngModelOptions]="{standalone: true}"
+      style="border-bottom: 1px solid rgba(0,0,0,0.25)"></ion-input>
+    <ion-button expand="block" (click)="onUpdate()">update peminjaman</ion-button>
+  </form>
+</ion-content>

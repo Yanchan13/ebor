@@ -13,7 +13,11 @@ export class AuthPage implements OnInit {
 
   async ngOnInit() {
     const loggedIn = await this.storage.get('userData');
+    const admin = await this.storage.get('admin');
     if (loggedIn) {
+      if (admin) {
+        return this.router.navigate(['admin'], { replaceUrl: true });
+      }
       return this.router.navigate(['home'], { replaceUrl: true });
     }
     return this.router.navigate(['login'], { replaceUrl: true });

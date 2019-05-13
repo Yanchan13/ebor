@@ -21,9 +21,14 @@ export class LoginPage implements OnInit {
   onLogin() {
     this.service.login(this.username, this.password).subscribe(async response => {
       if (response) {
-        await this.storage.set('userData', response);
-        return setTimeout(() => {
-          this.router.navigate(['home'], { replaceUrl: true });
+        const userData = response.json();
+        await this.storage.set('userData', JSON.stringify(userData[0]));
+        return setTimeout(async () => {
+          if (this.username === 'admin') {
+            await this.storage.set('admin', true);
+            return this.router.navigate(['auth'], { replaceUrl: true });
+          }
+          return this.router.navigate(['auth'], { replaceUrl: true });
         }, 500);
       }
     });

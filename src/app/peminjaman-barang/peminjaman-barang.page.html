@@ -39,9 +39,15 @@
     <ion-label>Tanggal Peminjaman</ion-label>
     <ion-datetime [(ngModel)]="tanggal_peminjaman" [ngModelOptions]="{standalone: true}"
       style="border-bottom: 1px solid rgba(0,0,0,0.25)"></ion-datetime>
+    <ion-label>Waktu Peminjaman</ion-label>
+    <ion-input [(ngModel)]="jam_peminjaman" [ngModelOptions]="{standalone: true}"
+      style="border-bottom: 1px solid rgba(0,0,0,0.25)"></ion-input>
     <ion-label>Tanggal Pengembalian</ion-label>
     <ion-datetime [(ngModel)]="tanggal_pengembalian" [ngModelOptions]="{standalone: true}"
       style="border-bottom: 1px solid rgba(0,0,0,0.25)"></ion-datetime>
-    <ion-button expand="block" (click)="onCreate()">login</ion-button>
+    <ion-label>Waktu Pengembalian</ion-label>
+    <ion-input [(ngModel)]="jam_pengembalian" [ngModelOptions]="{standalone: true}"
+      style="border-bottom: 1px solid rgba(0,0,0,0.25)"></ion-input>
+    <ion-button expand="block" (click)="onCreate()">buat peminjaman</ion-button>
   </form>
 </ion-content>

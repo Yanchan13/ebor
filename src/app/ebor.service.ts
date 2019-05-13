@@ -55,19 +55,9 @@ export class EborService {
   }
 
   // tslint:disable-next-line: max-line-length
-  updateRuangan(id, nama, nim, kelas, nohp, rg, tanggal_peminjaman, jam_peminjaman, tanggal_pengembalian, jam_pengembalian, keterangan, userid) {
+  updateRuangan(id, status, keterangan) {
     return this.http.put(`${this.host}/ruangan/${id}`, {
-      nama,
-      nim,
-      kelas,
-      nohp,
-      rg,
-      tanggal_peminjaman,
-      jam_peminjaman,
-      tanggal_pengembalian,
-      jam_pengembalian,
-      user_id: userid,
-      status: 'Disetujui',
+      status,
       keterangan
     });
   }
@@ -102,20 +92,9 @@ export class EborService {
   }
 
 // tslint:disable-next-line: max-line-length
-  async updateBarang(id, nama, nim, kelas, nohp, bg, jumlah_bg, tanggal_peminjaman, jam_peminjaman, tanggal_pengembalian, jam_pengembalian, keterangan, userid) {
+  updateBarang(id, status, keterangan) {
     return this.http.put(`${this.host}/barang/${id}`, {
-      nama,
-      nim,
-      kelas,
-      nohp,
-      bg,
-      jumlah_bg,
-      tanggal_peminjaman,
-      jam_peminjaman,
-      tanggal_pengembalian,
-      jam_pengembalian,
-      user_id: userid,
-      status: 'Disetujui',
+      status,
       keterangan
     });
   }

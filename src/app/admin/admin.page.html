@@ -1,32 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      Ebor
-    </ion-title>
+    <ion-title>Admin</ion-title>
     <ion-buttons slot="end">
-      <ion-icon name="contact" size="large" (click)="gotoProfile()"></ion-icon>
+      <ion-icon name="log-out" size="large" (click)="logout()"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <div>
-    <h3 style="text-align: center">Peminjaman Yang Diajukan</h3>
+    <h3 style="text-align: center">Daftar Peminjaman</h3>
   </div>
 
   <h3>Barang</h3>
   <div *ngFor="let barang of listBarang">
-    <div (click)="gotoBarang(barang)"
+    <div (click)="gotoBarang(barang.id)"
       style="display: flex; flex-direction: row; padding: 8px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 8px; justify-content: space-between; cursor: pointer">
+      <img src="assets/user.png" alt="" style="margin-right: 8px; width: 25px; height: 25px;">
       <div style="flex-grow: 1">
-        <h3 style="margin: 0px;">{{ barang.barang }}</h3>
-        <p>Status :</p>
-        <p>{{ barang.status }}</p>
-        <p>Keterangan :</p>
-        <p>{{ barang.keterangan }}</p>
+        <h3 style="margin: 0px;">{{ barang.nama }}</h3>
       </div>
       <ion-buttons style="align-self: center; align-items: flex-end">
         <ion-icon name="arrow-dropright" size="medium"></ion-icon>
@@ -36,14 +28,11 @@
 
   <h3>Ruangan</h3>
   <div *ngFor="let ruangan of listRuangan">
-    <div (click)="gotoRuangan(ruangan)"
+    <div (click)="gotoRuangan(ruangan.id)"
       style="display: flex; flex-direction: row; padding: 8px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 8px; justify-content: space-between; cursor: pointer">
+      <img src="assets/user.png" alt="" style="margin-right: 8px; width: 25px; height: 25px;">
       <div style="flex-grow: 1">
-        <h3 style="margin: 0px;">{{ ruangan.ruangan }}</h3>
-        <p>Status :</p>
-        <p>{{ ruangan.status }}</p>
-        <p>Keterangan :</p>
-        <p>{{ ruangan.keterangan }}</p>
+        <h3 style="margin: 0px;">{{ ruangan.nama }}</h3>
       </div>
       <ion-buttons style="align-self: center; align-items: flex-end">
         <ion-icon name="arrow-dropright" size="medium"></ion-icon>

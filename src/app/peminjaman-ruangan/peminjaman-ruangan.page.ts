@@ -17,9 +17,9 @@ export class PeminjamanRuanganPage implements OnInit {
   nohp: any;
   rg: any;
   tanggal_peminjaman: any;
-  jam_peminjaman = '00.00';
+  jam_peminjaman: any;
   tanggal_pengembalian: any;
-  jam_pengembalian = '00.00';
+  jam_pengembalian: any;
   constructor(private router: Router, private service: EborService, private storage: Storage, private location: Location, private toast: ToastController) { }
 
   ngOnInit() {

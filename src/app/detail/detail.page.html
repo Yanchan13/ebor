@@ -1,12 +1,62 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title></ion-title>
+    <ion-title *ngIf="isBarang">{{ barang.barang }}</ion-title>
+    <ion-title *ngIf="isRuangan">{{ ruangan.ruangan }}</ion-title>
     <ion-buttons slot="start">
       <ion-icon name="arrow-back" size="large" (click)="back()"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <div *ngIf="isBarang">
+    <h5>Nama :</h5>
+    <p>{{ barang.nama }}</p>
+    <h5>NIM :</h5>
+    <p>{{ barang.nim }}</p>
+    <h5>Kelas :</h5>
+    <p>{{ barang.kelas }}</p>
+    <h5>No HP :</h5>
+    <p>{{ barang.nohp }}</p>
+    <h5>Barang :</h5>
+    <p>{{ barang.barang }}</p>
+    <h5>Jumlah Barang :</h5>
+    <p>{{ barang.jumlah_barang }}</p>
+    <h5>Tanggal Peminjaman :</h5>
+    <p>{{ barang.tanggal_peminjaman | date }}</p>
+    <h5>Jam Peminjaman :</h5>
+    <p>{{ barang.jam_peminjaman }}</p>
+    <h5>Tanggal Pengembalian :</h5>
+    <p>{{ barang.tanggal_pengembalian | date }}</p>
+    <h5>Jam Pengembalian :</h5>
+    <p>{{ barang.jam_pengembalian }}</p>
+    <h5>Status :</h5>
+    <p>{{ barang.status }}</p>
+    <h5>Keterangan :</h5>
+    <p>{{ barang.keterangan }}</p>
+  </div>
+  <div *ngIf="isRuangan">
+    <h5>Nama :</h5>
+    <p>{{ ruangan.nama }}</p>
+    <h5>NIM :</h5>
+    <p>{{ ruangan.nim }}</p>
+    <h5>Kelas :</h5>
+    <p>{{ ruangan.kelas }}</p>
+    <h5>No HP :</h5>
+    <p>{{ ruangan.nohp }}</p>
+    <h5>Ruangan :</h5>
+    <p>{{ ruangan.ruangan }}</p>
+    <h5>Tanggal Peminjaman :</h5>
+    <p>{{ ruangan.tanggal_peminjaman | date }}</p>
+    <h5>Jam Peminjaman :</h5>
+    <p>{{ ruangan.jam_peminjaman }}</p>
+    <h5>Tanggal Pengembalian :</h5>
+    <p>{{ ruangan.tanggal_pengembalian | date }}</p>
+    <h5>Jam Pengembalian :</h5>
+    <p>{{ ruangan.jam_pengembalian }}</p>
+    <h5>Status :</h5>
+    <p>{{ ruangan.status }}</p>
+    <h5>Keterangan :</h5>
+    <p>{{ ruangan.keterangan }}</p>
+  </div>
 </ion-content>

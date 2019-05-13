@@ -23,7 +23,7 @@ export class AppComponent {
       icon: 'contacts'
     },
     {
-      title: 'Notification',
+      title: 'Peminjaman',
       url: '/notification',
       icon: 'notifications'
     }
