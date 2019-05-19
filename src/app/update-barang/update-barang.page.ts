@@ -37,7 +37,7 @@ export class UpdateBarangPage implements OnInit {
   onUpdate() {
     this.service.updateBarang(this.barang.id, this.barang.status, this.barang.keterangan).subscribe(response => {
       if (response) {
-
+        this.location.back();
       }
     });
   }

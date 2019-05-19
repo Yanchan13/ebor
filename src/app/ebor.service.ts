@@ -6,7 +6,7 @@ import { Storage } from '@ionic/storage';
   providedIn: 'root'
 })
 export class EborService {
-  host = 'http://localhost:3000/api';
+  host = 'https://ebor-server.herokuapp.com/api';
 
   // tslint:disable-next-line: deprecation
   constructor(private http: Http, private storage: Storage) { }
@@ -46,9 +46,9 @@ export class EborService {
       kelas,
       nohp,
       rg,
-      tanggal_peminjaman,
+      tanggal_peminjaman: tanggal_peminjaman.substring(0, 10),
       jam_peminjaman,
-      tanggal_pengembalian,
+      tanggal_pengembalian: tanggal_pengembalian.substring(0, 10),
       jam_pengembalian,
       user_id
     });
@@ -83,9 +83,9 @@ export class EborService {
       nohp,
       bg,
       jumlah_bg,
-      tanggal_peminjaman,
+      tanggal_peminjaman: tanggal_peminjaman.substring(0, 10),
       jam_peminjaman,
-      tanggal_pengembalian,
+      tanggal_pengembalian: tanggal_pengembalian.substring(0, 10),
       jam_pengembalian,
       user_id: userid,
     });

@@ -36,7 +36,7 @@ export class UpdateRuanganPage implements OnInit {
   onUpdate() {
     this.service.updateRuangan(this.ruangan.id, this.ruangan.status, this.ruangan.keterangan).subscribe(response => {
       if (response) {
-        console.log(response.json());
+        this.location.back();
       }
     });
   }

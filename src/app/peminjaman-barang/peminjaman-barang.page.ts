@@ -32,7 +32,7 @@ export class PeminjamanBarangPage implements OnInit {
 
   async onCreate() {
     const data = await this.storage.get('userData');
-    const userid = JSON.parse(data._body)[0].id;
+    const userid = JSON.parse(data).id;
     // tslint:disable-next-line: max-line-length
     this.service.createBarang(this.nama, this.nim, this.kelas, this.nohp, this.bg, this.jumlah_bg, this.tanggal_peminjaman, this.jam_peminjaman, this.tanggal_pengembalian, this.jam_pengembalian, userid).subscribe(response => {
       if (response) {

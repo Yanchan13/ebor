@@ -1,10 +1,8 @@
-import { Location } from '@angular/common';
 import { Storage } from '@ionic/storage';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EborService } from '../ebor.service';
 import { ModalController } from '@ionic/angular';
-import { DetailPage } from '../detail/detail.page';
 
 @Component({
   selector: 'app-admin',
@@ -18,6 +16,10 @@ export class AdminPage implements OnInit {
   constructor(private router: Router, private service: EborService, private modal: ModalController, private storage: Storage) { }
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData() {
     this.service.getBarang().subscribe(response => {
       const data = response.json().filter(val => {
         return val.status === 'pending';
